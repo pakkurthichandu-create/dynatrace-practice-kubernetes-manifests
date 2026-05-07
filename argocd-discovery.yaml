@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: discovery-server
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pakkurthichandu-create/dynatrace-practice-kubernetes-manifests.git
+    targetRevision: HEAD
+    path: discovery-server
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dynatrace-lab
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
