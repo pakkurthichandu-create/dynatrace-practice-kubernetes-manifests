@@ -18,6 +18,7 @@ spec:
       containers:
       - name: catalog
         image: chandu4440/catalog-service:v1
+        imagePullPolicy: Always
         ports:
         - containerPort: 8082
         resources:

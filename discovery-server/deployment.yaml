@@ -18,6 +18,7 @@ spec:
       containers:
       - name: eureka
         image: chandu4440/discovery-server:v1
+        imagePullPolicy: Always
         ports:
         - containerPort: 8761
         resources:
