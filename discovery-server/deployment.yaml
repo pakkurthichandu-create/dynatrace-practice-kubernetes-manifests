@@ -17,10 +17,17 @@ spec:
     spec:
       containers:
       - name: eureka
-        image: chandu4440/discovery-server:v1
+        image: chandu4440/discovery-server:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 8761
+        env:
+        - name: ERROR_RATE
+          value: "0.15"
+        - name: MIN_LATENCY_MS
+          value: "10"
+        - name: MAX_LATENCY_MS
+          value: "800"
         resources:
           requests:
             memory: "512Mi"
