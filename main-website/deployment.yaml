@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: website
-        image: chandu4440/main-website:v3
+        image: chandu4440/main-website:v4
         imagePullPolicy: Always
         ports:
         - containerPort: 8081
