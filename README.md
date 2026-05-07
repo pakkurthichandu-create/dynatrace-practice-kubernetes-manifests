@@ -1,0 +1,1 @@
+# dynatrace-practice-kubernetes-manifests
