@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: main-website
+  name: todo-ui
   namespace: dynatrace-lab
   labels:
-    app: website
+    app: todo-ui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: website
+      app: todo-ui
   template:
     metadata:
       labels:
-        app: website
+        app: todo-ui
     spec:
       containers:
       - name: website
@@ -23,7 +23,7 @@ spec:
         - containerPort: 8081
         env:
         - name: ORDERS_BASE_URL
-          value: http://catalog-service
+          value: http://todo-backend
         - name: JAVA_TOOL_OPTIONS
           value: "-Xms64m -Xmx128m"
         resources:

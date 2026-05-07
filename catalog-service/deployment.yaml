@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: catalog-service
+  name: todo-backend
   namespace: dynatrace-lab
   labels:
-    app: catalog
+    app: todo-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: catalog
+      app: todo-backend
   template:
     metadata:
       labels:
-        app: catalog
+        app: todo-backend
     spec:
       containers:
       - name: catalog
@@ -23,7 +23,7 @@ spec:
         - containerPort: 8082
         env:
         - name: FRAUD_BASE_URL
-          value: http://eureka-server:8761
+          value: http://todo-server-discovery:8761
         - name: JAVA_TOOL_OPTIONS
           value: "-Xms64m -Xmx128m"
         resources:

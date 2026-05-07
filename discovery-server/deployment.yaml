@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eureka-server
+  name: todo-server-discovery
   namespace: dynatrace-lab
   labels:
-    app: eureka
+    app: todo-server-discovery
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: eureka
+      app: todo-server-discovery
   template:
     metadata:
       labels:
-        app: eureka
+        app: todo-server-discovery
     spec:
       containers:
       - name: eureka
